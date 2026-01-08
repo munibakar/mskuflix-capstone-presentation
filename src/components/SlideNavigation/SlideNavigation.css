@@ -1,0 +1,106 @@
+.slide-navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 3px;
+    background: var(--bg-tertiary);
+    width: 100%;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--netflix-red);
+    transition: width var(--transition-normal);
+}
+
+/* Navigation Controls */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+/* Arrow Buttons */
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--bg-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.nav-arrow:hover:not(:disabled) {
+    background: var(--netflix-red);
+    color: white;
+}
+
+.nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Slide Counter */
+.slide-counter {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: monospace;
+    font-size: var(--font-lg);
+}
+
+.slide-counter .current {
+    font-weight: 700;
+    color: var(--netflix-red);
+    font-size: var(--font-xl);
+}
+
+.slide-counter .separator {
+    color: var(--text-muted);
+}
+
+.slide-counter .total {
+    color: var(--text-muted);
+}
+
+/* Navigation Dots */
+.nav-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--bg-tertiary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+}
+
+.nav-dot:hover {
+    background: var(--text-muted);
+    transform: scale(1.2);
+}
+
+.nav-dot.active {
+    background: var(--netflix-red);
+    transform: scale(1.3);
+}
