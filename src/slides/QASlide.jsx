@@ -2,103 +2,127 @@ import Slide from '../components/Slide';
 
 const QASlide = () => {
   return (
-    <Slide variant="centered">
-      <div className="qa-container">
-        <div className="logo-container">
-          <span className="logo-text">MSKU</span>
-          <span className="logo-highlight">FLIX</span>
+    <Slide>
+      <div className="qa-layout">
+        <div className="qa-left">
+          <div className="logo-container">
+            <span className="logo-text">MSKU</span>
+            <span className="logo-highlight">FLIX</span>
+          </div>
+
+          <h1>Questions?</h1>
+
+          <p className="thank-you">Thank you for your attention</p>
+
+          <div className="divider"></div>
+
+          <div className="team-cards">
+            <div className="team-card">
+              <h4>Münib Akar</h4>
+            </div>
+            <div className="team-card">
+              <h4>Ela Semra Sava</h4>
+            </div>
+            <div className="team-card">
+              <h4>Ali Zekai Deveci</h4>
+            </div>
+          </div>
+
+          <p className="project-footer">
+            Capstone Project 2025
+          </p>
         </div>
 
-        <h1>Questions?</h1>
-
-        <p className="thank-you">Thank you for your attention</p>
-
-        <div className="divider"></div>
-
-        <div className="team-cards">
-          <div className="team-card">
-            <h4>Münib Akar</h4>
-            <p>Team Member</p>
-          </div>
-          <div className="team-card">
-            <h4>Ela Semra Sava</h4>
-            <p>Team Member</p>
-          </div>
-          <div className="team-card">
-            <h4>Ali Zekai Deveci</h4>
-            <p>Team Member</p>
-          </div>
+        <div className="qa-right">
+          <video
+            className="demo-video"
+            autoPlay
+            loop
+            playsInline
+            controls
+          >
+            <source src="/demo-video.mp4" type="video/mp4" />
+          </video>
         </div>
-
-        <p className="project-footer">
-          Capstone Project 2025 • Microservices Architecture Study
-        </p>
       </div>
 
       <style>{`
-        .qa-container {
+        .qa-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: var(--spacing-2xl);
+          width: 100%;
+          align-items: center;
+        }
+        .qa-left {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: var(--spacing-md);
+          align-items: flex-start;
         }
-        .qa-container .logo-container {
+        .logo-container {
           display: flex;
           align-items: baseline;
-          margin-bottom: var(--spacing-sm);
+          margin-bottom: var(--spacing-md);
         }
-        .qa-container .logo-text {
+        .logo-text {
           font-size: 3rem;
           font-weight: 900;
           color: var(--text-primary);
           letter-spacing: -1px;
         }
-        .qa-container .logo-highlight {
+        .logo-highlight {
           font-size: 3rem;
           font-weight: 900;
           color: var(--netflix-red);
           letter-spacing: -1px;
         }
-        .qa-container h1 {
+        .qa-left h1 {
           font-size: var(--font-4xl);
           color: var(--text-primary);
-          margin: 0;
+          margin: 0 0 var(--spacing-xs) 0;
         }
         .thank-you {
-          font-size: var(--font-xl);
+          font-size: var(--font-lg);
           color: var(--text-secondary);
+          margin-bottom: var(--spacing-md);
         }
         .divider {
           width: 60px;
           height: 4px;
           background: var(--netflix-red);
           border-radius: 2px;
-          margin: var(--spacing-md) 0;
+          margin-bottom: var(--spacing-lg);
         }
         .team-cards {
           display: flex;
-          gap: var(--spacing-lg);
+          flex-direction: column;
+          gap: var(--spacing-sm);
+          margin-bottom: var(--spacing-lg);
         }
         .team-card {
           background: var(--bg-secondary);
-          padding: var(--spacing-lg) var(--spacing-xl);
-          border-radius: var(--radius-lg);
-          text-align: center;
+          padding: var(--spacing-sm) var(--spacing-lg);
+          border-radius: var(--radius-md);
         }
         .team-card h4 {
-          font-size: var(--font-lg);
-          color: var(--text-primary);
-          margin: 0 0 4px 0;
-        }
-        .team-card p {
           font-size: var(--font-md);
-          color: var(--text-muted);
+          color: var(--text-primary);
           margin: 0;
         }
         .project-footer {
-          font-size: var(--font-md);
+          font-size: var(--font-sm);
           color: var(--text-muted);
-          margin-top: var(--spacing-lg);
+        }
+        .qa-right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .demo-video {
+          max-height: 550px;
+          width: auto;
+          border-radius: var(--radius-lg);
+          box-shadow: var(--shadow-lg);
         }
       `}</style>
     </Slide>
