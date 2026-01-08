@@ -115,7 +115,7 @@ function App() {
 
           return (
             <div key={index} className={className}>
-              <SlideComponent />
+              <SlideComponent isActive={index === currentSlide} />
             </div>
           );
         })}

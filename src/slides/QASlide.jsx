@@ -1,6 +1,22 @@
+import { useRef, useEffect } from 'react';
 import Slide from '../components/Slide';
 
-const QASlide = () => {
+const QASlide = ({ isActive }) => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (isActive) {
+        videoRef.current.play().catch(() => {
+          // Autoplay with sound might be blocked by browser
+        });
+      } else {
+        videoRef.current.pause();
+        videoRef.current.currentTime = 0;
+      }
+    }
+  }, [isActive]);
+
   return (
     <Slide>
       <div className="qa-layout">
@@ -35,8 +51,8 @@ const QASlide = () => {
 
         <div className="qa-right">
           <video
+            ref={videoRef}
             className="demo-video"
-            autoPlay
             loop
             playsInline
             controls
@@ -121,8 +137,30 @@ const QASlide = () => {
         .demo-video {
           max-height: 550px;
           width: auto;
+          max-width: 100%;
           border-radius: var(--radius-lg);
           box-shadow: var(--shadow-lg);
+        }
+        @media (max-width: 900px) {
+          .qa-layout {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+          }
+          .qa-left {
+            align-items: center;
+            text-align: center;
+          }
+          .demo-video {
+            max-height: 350px;
+          }
+        }
+        @media (max-width: 600px) {
+          .logo-text, .logo-highlight {
+            font-size: 2rem;
+          }
+          .demo-video {
+            max-height: 250px;
+          }
         }
       `}</style>
     </Slide>

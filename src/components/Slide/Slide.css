@@ -335,3 +335,64 @@
 .team-info strong {
     color: var(--text-primary);
 }
+
+/* Responsive Grid Layouts */
+@media (max-width: 1200px) {
+    .slide-content {
+        max-width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .slide {
+        padding: var(--spacing-lg);
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slide--split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide {
+        padding: var(--spacing-md);
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-row {
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .stat {
+        flex: 1 1 45%;
+    }
+}
