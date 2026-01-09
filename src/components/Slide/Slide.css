@@ -396,3 +396,32 @@
         flex: 1 1 45%;
     }
 }
+
+/* Viewport Height Responsive */
+@media (max-height: 800px) {
+    .slide {
+        padding: var(--spacing-lg);
+    }
+
+    .slide h2 {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .slide p {
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+@media (max-height: 700px) {
+    .slide {
+        padding: var(--spacing-md);
+    }
+
+    .cards-grid {
+        gap: var(--spacing-sm);
+    }
+
+    .card {
+        padding: var(--spacing-sm);
+    }
+}

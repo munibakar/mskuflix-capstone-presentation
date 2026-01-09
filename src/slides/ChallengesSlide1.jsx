@@ -95,6 +95,22 @@ const ChallengesSlide1 = () => {
           line-height: 1.6;
           margin: 0;
         }
+        @media (max-width: 1400px) {
+          .challenges-list {
+            gap: var(--spacing-sm);
+          }
+          .challenge-item {
+            padding: var(--spacing-sm);
+          }
+          .challenge-item p {
+            font-size: var(--font-sm);
+          }
+        }
+        @media (max-width: 900px) {
+          .challenges-list {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
         </Slide>
     );

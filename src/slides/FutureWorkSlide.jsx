@@ -137,6 +137,29 @@ const FutureWorkSlide = () => {
           font-weight: 500;
           text-align: center;
         }
+        @media (max-width: 1400px) {
+          .future-grid {
+            gap: var(--spacing-sm);
+          }
+          .future-card {
+            padding: var(--spacing-sm);
+          }
+          .future-card h4 {
+            font-size: var(--font-md);
+          }
+          .future-card p {
+            font-size: var(--font-xs);
+          }
+          .team-note {
+            padding: var(--spacing-sm);
+            font-size: var(--font-sm);
+          }
+        }
+        @media (max-width: 900px) {
+          .future-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
     </Slide>
   );

@@ -135,6 +135,20 @@ const LearningsSlide1 = () => {
           line-height: 1.4;
           margin: 0;
         }
+        @media (max-width: 1400px) {
+          .learnings-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-sm);
+          }
+          .learning-item {
+            padding: var(--spacing-sm);
+          }
+        }
+        @media (max-width: 900px) {
+          .learnings-grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
         </Slide>
     );

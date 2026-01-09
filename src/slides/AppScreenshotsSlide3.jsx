@@ -45,6 +45,16 @@ const AppScreenshotsSlide3 = () => {
           border-radius: var(--radius-lg);
           box-shadow: var(--shadow-lg);
         }
+        @media (max-height: 800px) {
+          .screenshot-item img {
+            height: 380px;
+          }
+        }
+        @media (max-height: 700px) {
+          .screenshot-item img {
+            height: 300px;
+          }
+        }
         .screenshot-label {
           font-size: var(--font-lg);
           font-weight: 500;
